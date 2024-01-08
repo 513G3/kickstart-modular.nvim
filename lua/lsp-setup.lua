@@ -1,17 +1,10 @@
 -- [[ Configure LSP ]]
---  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
-  -- to define small helper and utility functions so you don't have to repeat yourself
-  -- many times.
-  --
-  -- In this case, we create a function that lets us more easily define mappings specific
-  -- for LSP related items. It sets the mode, buffer and description for us each time.
+local set_keymaps = function(bufnr)
+  -- Local utility function for reuse
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
-
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
@@ -41,6 +34,18 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+end
+
+local on_attach_generic = function(_, bufnr)
+  set_keymaps(bufnr)
+end
+
+local on_attach_ruff = function(client, bufnr)
+  set_keymaps(bufnr)
+  client.server_capabilities.hoverProvider = false
+  local file = io.open('test.txt', 'a')
+  file:write("\n" .. tostring(client.server_capabilities.hoverProvider))
+  file:close()
 end
 
 -- document existing key chains
@@ -97,12 +102,23 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
+    if (server_name ~= nil and server_name == "ruff_lsp") then
+      -- Custom handling for ruff_lsp
+      require('lspconfig')[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach_ruff,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+    else
+      -- Normal handling for everything else
+      require('lspconfig')[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach_generic,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+    end
   end,
 }
 
