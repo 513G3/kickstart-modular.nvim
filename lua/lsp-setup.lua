@@ -43,9 +43,6 @@ end
 local on_attach_ruff = function(client, bufnr)
   set_keymaps(bufnr)
   client.server_capabilities.hoverProvider = false
-  local file = io.open('test.txt', 'a')
-  file:write("\n" .. tostring(client.server_capabilities.hoverProvider))
-  file:close()
 end
 
 -- document existing key chains
