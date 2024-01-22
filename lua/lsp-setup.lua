@@ -106,6 +106,9 @@ mason_lspconfig.setup_handlers {
         on_attach = on_attach_ruff,
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,
+        },
       }
     else
       -- Normal handling for everything else
