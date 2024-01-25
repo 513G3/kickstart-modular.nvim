@@ -72,8 +72,9 @@ require('mason-lspconfig').setup()
 local servers = {
   clangd = { filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' } },
   pyright = { filetypes = { 'python' } },
-  ruff_lsp = { filetypes = { "python" } },
-  bufls = {},
+  ruff_lsp = { filetypes = { 'python' } },
+  bufls = { filetypes = { 'proto' } },
+  bashls = { filetypes = { 'sh' } },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
