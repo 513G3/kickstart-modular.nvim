@@ -63,14 +63,32 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
 
+-- Since the servers are already handled below,iput non-servers here
 require('mason-tool-installer').setup {
-  -- Since the servers are already handled below, I just put non-servers here
   ensure_installed = {
     'beautysh',
     'buf',
+    'isort',
     'shellcheck'
   }
 }
+
+-- Hook up the formatters
+require("conform").setup({
+  formatters_by_ft = {
+    --lua = { "stylua" },
+    -- Conform will run multiple formatters sequentially
+    python = { "isort" },
+    -- Use a sub-list to run only the first available formatter
+    --javascript = { { "prettierd", "prettier" } },
+    sh = { "beautysh", "shellcheck" },
+  },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
