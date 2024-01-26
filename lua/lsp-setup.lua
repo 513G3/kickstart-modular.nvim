@@ -63,6 +63,12 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
 
+require('mason-tool-installer').setup {
+  ensure_installed = {
+    'shellcheck'
+  }
+}
+
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
