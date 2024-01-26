@@ -66,6 +66,7 @@ require('which-key').register({
 require('mason-tool-installer').setup {
   -- Since the servers are already handled below, I just put non-servers here
   ensure_installed = {
+    'beautysh',
     'buf',
     'shellcheck'
   }
