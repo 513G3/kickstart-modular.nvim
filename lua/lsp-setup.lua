@@ -64,7 +64,9 @@ require('which-key').register({
 }, { mode = 'v' })
 
 require('mason-tool-installer').setup {
+  -- Since the servers are already handled below, I just put non-servers here
   ensure_installed = {
+    'buf',
     'shellcheck'
   }
 }
