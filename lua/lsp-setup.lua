@@ -111,6 +111,7 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  jsonls = { filetypes = { 'json' } },
 }
 
 -- Setup neovim lua configuration
