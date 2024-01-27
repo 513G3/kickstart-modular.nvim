@@ -63,18 +63,6 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
 
--- The language servers are handled below; put non-servers here
-require('mason-tool-installer').setup {
-  ensure_installed = {
-    'beautysh',
-    'buf',
-    'cpplint',
-    'isort',
-    'protolint',
-    'shellcheck'
-  }
-}
-
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
