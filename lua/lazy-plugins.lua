@@ -23,7 +23,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       {
         'williamboman/mason.nvim',
-        config = true
+        config = true,
       },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -33,7 +33,7 @@ require('lazy').setup({
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       {
         'j-hui/fidget.nvim',
-        opts = {}
+        opts = {},
       },
 
       -- Additional lua configuration, makes nvim stuff amazing!
@@ -61,7 +61,7 @@ require('lazy').setup({
   {
     -- Useful plugin to show you pending keybinds
     'folke/which-key.nvim',
-    opts = {}
+    opts = {},
   },
 
   {
@@ -174,7 +174,7 @@ require('lazy').setup({
   {
     -- "gc" to comment visual regions/lines
     'numToStr/Comment.nvim',
-    opts = {}
+    opts = {},
   },
 
   -- Fuzzy Finder (files, lsp, etc)
@@ -209,7 +209,7 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  require 'kickstart.plugins.autoformat',
+  -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
 
   { import = 'custom.plugins' },
