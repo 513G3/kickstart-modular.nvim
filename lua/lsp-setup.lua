@@ -63,12 +63,13 @@ require('which-key').register({
   ['<leader>h'] = { 'Git [H]unk' },
 }, { mode = 'v' })
 
--- Since the servers are already handled below,iput non-servers here
+-- The language servers are handled below; put non-servers here
 require('mason-tool-installer').setup {
   ensure_installed = {
     'beautysh',
     'buf',
     'isort',
+    'protolint',
     'shellcheck'
   }
 }
