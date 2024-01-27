@@ -7,8 +7,10 @@ return {
         'buf',
         'cpplint',
         'isort',
+        'jsonlint',
         'protolint',
         'shellcheck',
+        'stylua',
       },
     }
   end,

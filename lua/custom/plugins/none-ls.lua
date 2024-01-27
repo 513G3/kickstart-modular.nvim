@@ -15,6 +15,7 @@ return {
         null_ls.builtins.formatting.stylua,
         -- Linters
         null_ls.builtins.diagnostics.cpplint,
+        null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.protolint,
         null_ls.builtins.diagnostics.shellcheck,
       },
