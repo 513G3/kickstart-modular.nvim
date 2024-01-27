@@ -68,29 +68,12 @@ require('mason-tool-installer').setup {
   ensure_installed = {
     'beautysh',
     'buf',
+    'cpplint',
     'isort',
     'protolint',
     'shellcheck'
   }
 }
-
--- Hook up the formatters
-require("conform").setup({
-  formatters_by_ft = {
-    --lua = { "stylua" },
-    proto = { "buf" },
-    python = { "isort" },
-    -- Use a sub-list to run only the first available formatter
-    --javascript = { { "prettierd", "prettier" } },
-    -- Conform will run multiple formatters sequentially
-    sh = { "beautysh", "shellcheck" },
-  },
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
-  },
-})
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
