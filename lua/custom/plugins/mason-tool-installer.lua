@@ -8,8 +8,8 @@ return {
         'cpplint',
         'isort',
         'protolint',
-        'shellcheck'
-      }
+        'shellcheck',
+      },
     }
-  end
+  end,
 }

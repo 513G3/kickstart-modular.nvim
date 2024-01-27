@@ -101,7 +101,7 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    if (server_name ~= nil and server_name == "ruff_lsp") then
+    if server_name ~= nil and server_name == 'ruff_lsp' then
       -- Custom handling for ruff_lsp
       require('lspconfig')[server_name].setup {
         capabilities = capabilities,
@@ -109,7 +109,7 @@ mason_lspconfig.setup_handlers {
         settings = servers[server_name],
         filetypes = (servers[server_name] or {}).filetypes,
         handlers = {
-          ["textDocument/publishDiagnostics"] = function() end,
+          ['textDocument/publishDiagnostics'] = function() end,
         },
       }
     else
