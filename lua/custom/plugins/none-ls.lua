@@ -14,6 +14,7 @@ return {
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.stylua,
         -- Linters
+        null_ls.builtins.diagnostics.buf,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.diagnostics.cpplint,
         null_ls.builtins.diagnostics.jsonlint,
