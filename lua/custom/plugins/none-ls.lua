@@ -19,7 +19,7 @@ return {
         null_ls.builtins.diagnostics.cpplint,
         null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.protolint,
-        null_ls.builtins.diagnostics.shellcheck,
+        -- null_ls.builtins.diagnostics.shellcheck (already used by bash_language_server)
       },
     }
 
