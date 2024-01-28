@@ -5,6 +5,7 @@ return {
       ensure_installed = {
         'beautysh',
         'buf',
+        'checkmake',
         'cpplint',
         'isort',
         'jsonlint',
