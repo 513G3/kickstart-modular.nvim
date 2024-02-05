@@ -16,7 +16,9 @@ return {
         -- Linters
         null_ls.builtins.diagnostics.buf,
         null_ls.builtins.diagnostics.checkmake,
-        null_ls.builtins.diagnostics.cpplint.with({ args = { "--filter=-legal/copyright,-whitespace/braces", "$FILENAME" } }),
+        null_ls.builtins.diagnostics.cpplint.with({
+          args = { "--filter=-legal/copyright,-whitespace/braces", "$FILENAME" },
+        }),
         null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.protolint,
         -- null_ls.builtins.diagnostics.shellcheck (already used by bash_language_server)
