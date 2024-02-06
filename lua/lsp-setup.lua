@@ -112,6 +112,23 @@ mason_lspconfig.setup_handlers {
           ['textDocument/publishDiagnostics'] = function() end,
         },
       }
+    elseif server_name ~= nil and server_name == 'clangd' then
+      -- Using clangd with cpplint causes a complaint about encoding; have
+      -- clangd use cpplint's default of utf-8
+      local clangd_capabilities = {}
+      for k, v in pairs(capabilities) do
+        -- Shallow copy is fine for this since offsetEncoding is at the top level
+        clangd_capabilities[k] = v
+      end
+      clangd_capabilities.offsetEncoding = 'utf-8'
+
+      -- Custom handling for clangd
+      require('lspconfig')[server_name].setup {
+        capabilities = clangd_capabilities,
+        on_attach = on_attach_generic,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
     else
       -- Normal handling for everything else
       require('lspconfig')[server_name].setup {
