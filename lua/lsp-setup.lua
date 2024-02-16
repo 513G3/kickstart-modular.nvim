@@ -70,7 +70,7 @@ require('mason-lspconfig').setup()
 
 -- Enable the following language servers
 local servers = {
-  clangd = { filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' } },
+  clangd = { filetypes = { 'c', 'cpp' } },
   pyright = { filetypes = { 'python' } },
   ruff_lsp = { filetypes = { 'python' } },
   bufls = { filetypes = { 'proto' } },
