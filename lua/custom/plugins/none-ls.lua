@@ -17,7 +17,7 @@ return {
         null_ls.builtins.diagnostics.buf,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.diagnostics.cpplint.with({
-          args = { "--filter=-legal/copyright,-whitespace/braces", "$FILENAME" },
+          args = { "--filter=-legal/copyright,-whitespace/braces,-whitespace/newline", "$FILENAME" },
         }),
         null_ls.builtins.diagnostics.jsonlint,
         null_ls.builtins.diagnostics.protolint,
