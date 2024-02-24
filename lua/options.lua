@@ -8,6 +8,9 @@ vim.o.cursorline = true
 -- Keep a reasonable margin when scrolling around
 vim.o.scrolloff = 8
 
+-- Visually indicate the 80th column
+vim.o.colorcolumn = '80'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
