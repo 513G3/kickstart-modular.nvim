@@ -2,6 +2,12 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Set highlight for current line
+vim.o.cursorline = true
+
+-- Keep a reasonable margin when scrolling around
+vim.o.scrolloff = 8
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
