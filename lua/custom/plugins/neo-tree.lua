@@ -19,7 +19,7 @@ return {
     require('neo-tree').setup({
       filesystem = {
         filtered_items = {
-          -- visible = true, -- Show hidden files by default
+          visible = true, -- Show hidden files by default
         },
         follow_current_file = {
           enabled = true, -- Refocus the tree as nvim bounces around files
