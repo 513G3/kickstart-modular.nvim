@@ -17,6 +17,7 @@ return {
     -- we need to call setup() ourselves and write out the options
     -- that we want to override:
     require('neo-tree').setup({
+      close_if_last_window = true,
       filesystem = {
         filtered_items = {
           visible = true, -- Show hidden files by default
