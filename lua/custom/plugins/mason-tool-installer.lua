@@ -10,7 +10,6 @@ return {
         'isort',
         'jsonlint',
         'protolint',
-        'shellcheck',
         'stylua',
       },
     }
