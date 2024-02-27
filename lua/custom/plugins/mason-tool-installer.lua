@@ -3,13 +3,13 @@ return {
   config = function()
     require('mason-tool-installer').setup {
       ensure_installed = {
-        'beautysh',
         'buf',
         'checkmake',
         'cpplint',
         'isort',
         'jsonlint',
         'protolint',
+        'shfmt',
         'stylua',
       },
     }

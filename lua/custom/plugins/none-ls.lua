@@ -9,9 +9,9 @@ return {
     null_ls.setup({
       sources = {
         -- Formatters
-        null_ls.builtins.formatting.beautysh,
         null_ls.builtins.formatting.buf,
         null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.stylua,
         -- Linters
         null_ls.builtins.diagnostics.buf,
