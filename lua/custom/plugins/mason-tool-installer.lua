@@ -10,6 +10,7 @@ return {
         'jsonlint',
         'protolint',
         'shfmt',
+        'shellcheck',
         'stylua',
       },
     }
