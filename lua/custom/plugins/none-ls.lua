@@ -19,7 +19,6 @@ return {
         null_ls.builtins.diagnostics.buf,
         null_ls.builtins.diagnostics.checkmake,
         null_ls.builtins.diagnostics.protolint,
-        -- null_ls.builtins.diagnostics.shellcheck (already used by bash_language_server)
 
         -- Extra linters
         require('none-ls.diagnostics.cpplint').with({
