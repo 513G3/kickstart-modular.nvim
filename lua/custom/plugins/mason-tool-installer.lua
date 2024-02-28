@@ -5,7 +5,6 @@ return {
       ensure_installed = {
         'buf',
         'checkmake',
-        'cpplint',
         'isort',
         'jsonlint',
         'protolint',
