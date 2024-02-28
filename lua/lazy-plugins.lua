@@ -142,6 +142,8 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  require 'kickstart/plugins/todo-comments',
+
   require 'kickstart.plugins.indent-blankline',
 
   -- require 'kickstart.plugins.autoformat',
