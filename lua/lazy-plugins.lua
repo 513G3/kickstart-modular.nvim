@@ -142,6 +142,8 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- require 'kickstart/plugins/gitsigns', -- Using custom/plugins/gitsigns instead
+
   require 'kickstart/plugins/todo-comments',
 
   require 'kickstart.plugins.indent-blankline',
