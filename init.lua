@@ -102,10 +102,6 @@ require 'lazy-bootstrap'
 -- [[ Configure plugins ]]
 require 'lazy-plugins'
 
--- [[ Configure Telescope ]]
--- (fuzzy finder)
-require 'telescope-setup'
-
 -- [[ Configure LSP ]]
 -- (Language Server Protocol)
 require 'lsp-setup'
