@@ -140,6 +140,8 @@ require('lazy').setup({
 
   require 'kickstart/plugins/which-key',
 
+  -- require 'kickstart/plugins/conform',
+
   require 'kickstart/plugins/todo-comments',
 
   require 'kickstart/plugins/indent-blankline',
