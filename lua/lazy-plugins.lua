@@ -127,15 +127,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-  },
-
   require 'kickstart/plugins/gitsigns',
 
   require 'kickstart/plugins/which-key',
@@ -145,6 +136,8 @@ require('lazy').setup({
   require 'kickstart/plugins/tokyonight',
 
   require 'kickstart/plugins/todo-comments',
+
+  require 'kickstart/plugins/treesitter',
 
   require 'kickstart/plugins/indent-blankline',
 
