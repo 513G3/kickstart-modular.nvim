@@ -30,7 +30,7 @@ return {
       -- Useful for getting pretty icons, but requires special font.
       --  If you already have a Nerd Font, or terminal set up with fallback fonts
       --  you can enable this
-      { 'nvim-tree/nvim-web-devicons' }
+      { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -63,7 +63,19 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+
+        pickers = {
+          find_files = {
+           find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+          },
+          grep_string = {
+            additional_args = { '--hidden' },
+          },
+          live_grep = {
+            additional_args = { '--hidden' },
+          },
+        },
+
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
