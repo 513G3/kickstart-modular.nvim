@@ -66,13 +66,13 @@ return {
 
         pickers = {
           find_files = {
-           find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+            additional_args = { '--iglob', '!.git', '--no-ignore' },
           },
           grep_string = {
-            additional_args = { '--hidden' },
+            additional_args = { '--no-ignore' },
           },
           live_grep = {
-            additional_args = { '--hidden' },
+            additional_args = { '--no-ignore' },
           },
         },
 
