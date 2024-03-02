@@ -69,10 +69,10 @@ return {
             additional_args = { '--iglob', '!.git', '--no-ignore' },
           },
           grep_string = {
-            additional_args = { '--no-ignore' },
+            additional_args = { '--iglob', '!compile_commands*', '--no-ignore' },
           },
           live_grep = {
-            additional_args = { '--no-ignore' },
+            additional_args = { '--iglob', '!compile_commands*', '--no-ignore' },
           },
         },
 
