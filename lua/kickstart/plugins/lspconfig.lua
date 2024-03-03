@@ -196,16 +196,18 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            if server_name ~= nil and server_name == 'ruff_lsp' then
-              -- Custom handling for ruff_lsp
-              server.capabilities.hoverProvider = false
-              server.handlers = {
-                ['textDocument/publishDiagnostics'] = function() end,
-              }
-            elseif server_name ~= nil and server_name == 'clangd' then
-              -- Using clangd with cpplint causes a complaint about encoding; have
-              -- clangd use cpplint's default of utf-8
-              server.capabilities.offsetEncoding = 'utf-8'
+            if server_name ~= nil then
+              if server_name == 'ruff_lsp' then
+                -- Let pyright (via none-ls) handle this stuff
+                server.capabilities.hoverProvider = false
+                server.handlers = {
+                  ['textDocument/publishDiagnostics'] = function() end,
+                }
+              elseif server_name == 'clangd' then
+                -- Using clangd with cpplint (via none-ls) causes a complaint
+                -- about encoding; have clangd use cpplint's default of utf-8
+                server.capabilities.offsetEncoding = 'utf-8'
+              end
             end
             require('lspconfig')[server_name].setup(server)
           end,
