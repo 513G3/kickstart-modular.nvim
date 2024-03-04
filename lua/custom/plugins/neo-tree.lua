@@ -1,13 +1,13 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  version = "*",
+  'nvim-neo-tree/neo-tree.nvim',
+  version = '*',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
+    'nvim-lua/plenary.nvim',
+    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+    'MunifTanjim/nui.nvim',
   },
   config = function()
-    vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+    vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
     vim.keymap.set('n', '<leader>tt', ':Neotree reveal toggle<cr>', { desc = 'toggle Neotree' })
 
     -- Because we have explicitly defined config(), we cannot
@@ -16,17 +16,22 @@ return {
     -- to be passed to setup() and override their default values,
     -- we need to call setup() ourselves and write out the options
     -- that we want to override:
-    require('neo-tree').setup({
+    require('neo-tree').setup {
       close_if_last_window = true,
       filesystem = {
         filtered_items = {
           visible = true, -- Show hidden files by default
+          never_show = {
+            '__pycache__',
+            '.cache',
+            '.sconsign.dblite',
+          },
         },
         follow_current_file = {
-          enabled = true, -- Refocus the tree as nvim bounces around files
+          enabled = true,              -- Refocus the tree as nvim bounces around files
         },
         use_libuv_file_watcher = true, -- Auto-update the tree as files are added and removed
       },
-    })
+    }
   end,
 }
