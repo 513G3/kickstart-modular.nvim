@@ -66,7 +66,7 @@ return {
 
         pickers = {
           find_files = {
-            additional_args = { '--iglob', '!.git', '--no-ignore' },
+            additional_args = { '--iglob', '\\!.git', '--iglob', '\\venv', '--iglob',  '\\node_modules', '--no-ignore' },
           },
           grep_string = {
             additional_args = { '--iglob', '!compile_commands*', '--no-ignore' },
