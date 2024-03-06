@@ -25,6 +25,7 @@ return {
             '__pycache__',
             '.cache',
             '.sconsign.dblite',
+            'venv',
           },
         },
         follow_current_file = {
