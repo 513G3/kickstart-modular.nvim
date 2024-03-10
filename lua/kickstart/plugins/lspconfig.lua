@@ -9,7 +9,7 @@ return {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {}, },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       -- 'folke/neodev.nvim',
@@ -184,7 +184,7 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-      --   'stylua', -- Used to format lua code
+        --   'stylua', -- Used to format lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -211,8 +211,8 @@ return {
             end
             require('lspconfig')[server_name].setup(server)
           end,
-        }
+        },
       }
-    end
-  }
+    end,
+  },
 }

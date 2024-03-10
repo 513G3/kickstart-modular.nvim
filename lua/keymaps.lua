@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     local cursor_pos = vim.api.nvim_win_get_cursor(0)
 
     -- Remove all trailing whitespace
-    vim.cmd([[%s/\s\+$//e]])
+    vim.cmd [[%s/\s\+$//e]]
 
     -- Restore cursor position
     vim.api.nvim_win_set_cursor(0, cursor_pos)
