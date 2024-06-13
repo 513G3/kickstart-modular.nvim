@@ -198,7 +198,7 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             if server_name ~= nil then
               if server_name == 'ruff_lsp' then
-                -- Let pyright (via none-ls) handle this stuff
+                -- Let pyright handle this stuff
                 server.capabilities.hoverProvider = false
                 server.handlers = {
                   ['textDocument/publishDiagnostics'] = function() end,
