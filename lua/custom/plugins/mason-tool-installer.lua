@@ -6,7 +6,6 @@ return {
         'buf',
         'checkmake',
         'cpplint',
-        'isort',
         'protolint',
         'shfmt',
         'shellcheck',

@@ -11,7 +11,6 @@ return {
       sources = {
         -- Built-in formatters
         null_ls.builtins.formatting.buf,
-        null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.shfmt.with {
           args = { '-i', '4' },
         },
