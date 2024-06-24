@@ -4,6 +4,7 @@ return {
     require('lualine').setup {
       options = {
         theme = 'auto',
+        path = 1,
       },
     }
   end,
