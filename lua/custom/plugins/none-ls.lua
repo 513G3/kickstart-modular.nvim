@@ -28,6 +28,6 @@ return {
       },
     }
 
-    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format' })
+    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = '[F]ormat' })
   end,
 }
