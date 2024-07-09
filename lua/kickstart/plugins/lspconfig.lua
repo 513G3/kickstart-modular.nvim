@@ -142,8 +142,20 @@ return {
         bashls = { filetypes = { 'sh' } },
         clangd = { filetypes = { 'c', 'cpp' } },
         jsonls = { filetypes = { 'json' } },
-        pyright = { filetypes = { 'python' } },
         ruff_lsp = { filetypes = { 'python' } },
+        pyright = {
+          filetypes = { 'python' },
+          settings = {
+            pyright = {
+              disableOrganizeImports = true, -- Using Ruff
+            },
+            python = {
+              analysis = {
+                ignore = { '*' }, -- Using Ruff
+              },
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
@@ -197,13 +209,7 @@ return {
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             if server_name ~= nil then
-              if server_name == 'ruff_lsp' then
-                -- Let pyright handle this stuff
-                server.capabilities.hoverProvider = false
-                server.handlers = {
-                  ['textDocument/publishDiagnostics'] = function() end,
-                }
-              elseif server_name == 'clangd' then
+              if server_name == 'clangd' then
                 -- Using clangd with cpplint (via none-ls) causes a complaint
                 -- about encoding; have clangd use cpplint's default of utf-8
                 server.capabilities.offsetEncoding = 'utf-8'

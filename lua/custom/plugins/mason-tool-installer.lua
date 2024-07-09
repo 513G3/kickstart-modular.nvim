@@ -8,7 +8,7 @@ return {
         'cpplint',
         'protolint',
         'shfmt',
-        'shellcheck',
+        'shellcheck', -- Used by bash-language-server
         'stylua',
       },
     }
