@@ -22,13 +22,13 @@ return {
 
       -- Document existing key chains
       require('which-key').add {
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>c', desc = 'Code' },
+        { '<leader>d', desc = 'Document' },
+        { '<leader>h', desc = 'Git Hunk', mode = { 'n', 'v' } }, -- gitsigns
+        { '<leader>r', desc = 'Rename' }, --lspconfig
+        { '<leader>s', desc = 'Search' },
+        { '<leader>t', desc = 'Toggle' },
+        { '<leader>w', desc = 'Workspace' },
       }
     end,
   },
