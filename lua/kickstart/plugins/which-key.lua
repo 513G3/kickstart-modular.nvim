@@ -1,34 +1,44 @@
--- NOTE: Plugins can also be configured to run lua code when they are loaded.
---
--- This is often very useful to both group configuration, as well as handle
--- lazy loading plugins that don't need to be loaded immediately at startup.
---
--- For example, in the following configuration, we use:
---  event = 'VeryLazy'
---
--- which loads which-key after all the UI elements are loaded. Events can be
--- normal autocommands events (:help autocomd-events).
---
--- Then, because we use the `config` key, the configuration only runs
--- after the plugin has been loaded:
---  config = function() ... end
-
 return {
-  {                     -- Useful plugin to show you pending keybinds.
+  {
     'folke/which-key.nvim',
     event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+      local wk = require 'which-key'
+      wk.setup()
 
-      -- Document existing key chains
-      require('which-key').add {
-        { '<leader>c', desc = 'Code' },
-        { '<leader>d', desc = 'Document' },
-        { '<leader>h', desc = 'Git Hunk', mode = { 'n', 'v' } }, -- gitsigns
-        { '<leader>r', desc = 'Rename' }, --lspconfig
-        { '<leader>s', desc = 'Search' },
-        { '<leader>t', desc = 'Toggle' },
-        { '<leader>w', desc = 'Workspace' },
+      -- Diagnostics
+      wk.add {
+        { '<leader>d', desc = 'Diagnostics', mode = { 'n' } },
+        {
+          '<leader>de',
+          vim.diagnostic.open_float,
+          desc = 'Error Messages',
+          icon = { icon = '', color = 'red' },
+          mode = { 'n' },
+        },
+        { '<leader>dq', vim.diagnostic.setloclist, desc = 'Quickfix List', mode = { 'n' } },
+      }
+
+      -- Git
+      wk.add {
+        { '<leader>g', desc = 'Git', mode = { 'n' } },
+        { '<leader>gt', desc = 'Toggle', mode = { 'n' } },
+      }
+
+      -- LSP
+      wk.add {
+        { '<leader>l', desc = 'Language Server', icon = '', mode = { 'n' } },
+        { '<leader>ls', desc = 'Symbols', mode = { 'n' } },
+      }
+
+      -- Tree
+      wk.add {
+        { '<leader>t', '<cmd>Neotree reveal toggle<cr>', desc = 'Tree', icon = '󰙅', mode = { 'n' } },
+      }
+
+      -- Search
+      wk.add {
+        { '<leader>s', desc = 'Search', mode = { 'n' } },
       }
     end,
   },

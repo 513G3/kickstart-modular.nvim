@@ -8,7 +8,6 @@ return {
   },
   config = function()
     vim.cmd [[ let g:neo_tree_remove_legacy_commands = 1 ]]
-    vim.keymap.set('n', '<leader>tt', ':Neotree reveal toggle<cr>', { desc = 'toggle Neotree' })
 
     -- Because we have explicitly defined config(), we cannot
     -- use 'opts' at the outer layer since the toplevel's init.lua
