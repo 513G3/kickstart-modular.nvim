@@ -199,6 +199,7 @@ return {
         'beautysh',
         'buf',
         'checkmake',
+        'clang-format',
         'isort',
         'jsonlint',
         'protolint',
