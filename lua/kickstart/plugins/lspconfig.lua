@@ -200,6 +200,7 @@ return {
         'buf',
         'checkmake',
         'clang-format',
+        'cpplint',
         'isort',
         'jsonlint',
         'protolint',
