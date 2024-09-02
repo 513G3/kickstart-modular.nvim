@@ -23,7 +23,11 @@ return {
 
         -- Extra linters
         require('none-ls.diagnostics.cpplint').with {
-          args = { '--filter=-legal/copyright,-whitespace/braces,-whitespace/newline', '$FILENAME' },
+          args = {
+            '--filter=-legal/copyright,-whitespace/braces,-whitespace/newline',
+            '--linelength=100',
+            '$FILENAME'
+          },
         },
       },
     }
