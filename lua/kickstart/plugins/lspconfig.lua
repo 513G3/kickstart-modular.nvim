@@ -138,11 +138,12 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        bufls = { filetypes = { 'proto' } },
+        buf = { filetypes = { 'proto' } },
         bashls = { filetypes = { 'sh' } },
         clangd = { filetypes = { 'c', 'cpp' } },
         jsonls = { filetypes = { 'json' } },
-        ruff_lsp = { filetypes = { 'python' } },
+        ruff = { filetypes = { 'python' } },
+        taplo = { filetypes = { 'toml' } },
         pyright = {
           filetypes = { 'python' },
           settings = {
@@ -201,7 +202,6 @@ return {
         'checkmake',
         'clang-format',
         'cpplint',
-        'isort',
         'jsonlint',
         'protolint',
         'shellcheck',
