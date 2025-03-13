@@ -228,6 +228,8 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+        ensure_installed = servers,
+        automatic_installation = true,
       }
     end,
   },
