@@ -9,7 +9,6 @@ return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VeryLazy',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
@@ -80,6 +79,8 @@ return {
               '!gtest',            -- Ignore gtest glob
               '--no-ignore-vcs'    -- Do not ignore stuff that VCS ignores
             },
+            follow = true,         -- Follow symlinks; not sure why "--follow"
+                                   -- does not work above
           },
           grep_string = {
             additional_args = {
