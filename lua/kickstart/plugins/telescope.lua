@@ -68,40 +68,42 @@ return {
             find_commad = {
               'rg',                -- Use ripgrep (make sure it is installed!)
               '--files-without-match',
-              '\\.o$',             -- Ignore object files
-              '-g',
-              '!venv',             -- Ignore venv glob
-              '-g',
-              '!nodejs',           -- Ignore nodejs glob
-              '-g',
-              '!node_modules',     -- Ignore node_modules glob
-              '-g',
-              '!gtest',            -- Ignore gtest glob
-              '--no-ignore-vcs'    -- Do not ignore stuff that VCS ignores
+              '\\.(pyc|o)$',       -- Ignore intermediates
+              -- '-g',
+              -- '!venv',             -- Ignore venv glob
+              -- '-g',
+              -- '!nodejs',           -- Ignore nodejs glob
+              -- '-g',
+              -- '!node_modules',     -- Ignore node_modules glob
+              -- '-g',
+              -- '!gtest',            -- Ignore gtest glob
+              -- '--no-ignore-vcs',   -- Do not ignore stuff that VCS ignores
             },
             follow = true,         -- Follow symlinks; not sure why "--follow"
                                    -- does not work above
           },
           grep_string = {
             additional_args = {
-              '--iglob',
-              '!compile_commands', -- Ignore compile_commands glob
-              '--iglob',
-              '!venv',             -- Ignore venv glob
-              '--iglob',
-              '!gtest',            -- Ignore gtest glob
-              '--no-ignore-vcs'    -- Do not ignore stuff that VCS ignores
+              -- '--iglob',
+              -- '!compile_commands', -- Ignore compile_commands glob
+              -- '--iglob',
+              -- '!venv',             -- Ignore venv glob
+              -- '--iglob',
+              -- '!gtest',            -- Ignore gtest glob
+              -- '--no-ignore-vcs',   -- Do not ignore stuff that VCS ignores
+              '--follow',          -- Follow symlinks
             },
           },
           live_grep = {
             additional_args = {
-              '--iglob',
-              '!compile_commands', -- Ignore compile_commands glob
-              '--iglob',
-              '!venv',             -- Ignore venv glob
-              '--iglob',
-              '!gtest',            -- Ignore gtest glob
-              '--no-ignore-vcs'    -- Do not ignore stuff that VCS ignores
+              -- '--iglob',
+              -- '!compile_commands', -- Ignore compile_commands glob
+              -- '--iglob',
+              -- '!venv',             -- Ignore venv glob
+              -- '--iglob',
+              -- '!gtest',            -- Ignore gtest glob
+              -- '--no-ignore-vcs',   -- Do not ignore stuff that VCS ignores
+              '--follow',          -- Follow symlinks
             },
           },
         },
