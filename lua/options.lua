@@ -61,7 +61,7 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Visually indicate the 80th column
-vim.opt.colorcolumn = '80'
+-- Visually indicate the 120th column
+vim.opt.colorcolumn = '120'
 
 -- vim: ts=2 sts=2 sw=2 et
