@@ -95,7 +95,11 @@ return {
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
-          map('K', vim.lsp.buf.hover, 'Hover Documentation')
+          map(
+            'K',
+            function() vim.lsp.buf.hover { border = 'single', max_height = 25, max_width = 120 } end,
+            'Hover Documentation'
+          )
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header
