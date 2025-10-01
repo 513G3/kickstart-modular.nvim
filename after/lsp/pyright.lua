@@ -36,9 +36,9 @@ return {
   settings = {
     python = {
       analysis = {
-        --  autoSearchPaths = true,
-        --  useLibraryCodeForTypes = true,
-        --  diagnosticMode = 'openFilesOnly',
+        -- autoSearchPaths = true,
+        -- useLibraryCodeForTypes = true,
+        -- diagnosticMode = 'openFilesOnly',
         ignore = { "*" }, -- Does not work unless there is a root_marker in place
       },
     },
