@@ -147,7 +147,6 @@ return {
       local servers = {
         buf = { filetypes = { 'proto' } },
         bashls = { filetypes = { 'sh' } },
-        clangd = { filetypes = { 'c', 'cpp' } },
         jsonls = { filetypes = { 'json' } },
         ruff = { filetypes = { 'python' } },
         taplo = { filetypes = { 'toml' } },
@@ -185,6 +184,7 @@ return {
         'beautysh',
         'buf',
         'checkmake',
+        'clangd',
         'clang-format',
         'cpplint',
         'jsonlint',
@@ -204,13 +204,6 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            if server_name ~= nil then
-              if server_name == 'clangd' then
-                -- Using clangd with cpplint (via none-ls) causes a complaint
-                -- about encoding; have clangd use cpplint's default of utf-8
-                server.capabilities.offsetEncoding = 'utf-8'
-              end
-            end
             require('lspconfig')[server_name].setup(server)
           end,
         },
