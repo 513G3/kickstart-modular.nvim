@@ -39,7 +39,7 @@ return {
         --  autoSearchPaths = true,
         --  useLibraryCodeForTypes = true,
         --  diagnosticMode = 'openFilesOnly',
-        ignore = { "*" }, -- Does not work
+        ignore = { "*" }, -- Does not work unless there is a root_marker in place
       },
     },
     pyright = {
