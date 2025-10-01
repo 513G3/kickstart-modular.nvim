@@ -126,7 +126,10 @@ return {
       })
 
       -- Diagnostic Config
-      vim.diagnostic.config( { virtual_text = { source = true } } )
+      vim.diagnostic.config({
+        virtual_text = false,
+        virtual_lines = true,
+      })
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP Specification.
