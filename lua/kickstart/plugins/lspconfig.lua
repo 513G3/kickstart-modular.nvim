@@ -93,9 +93,6 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>lc', vim.lsp.buf.code_action, 'Code Action')
 
-          -- Toggle the lsp_lines plugin on and off for diagnostic viewing
-          map('<leader>ll', require('lsp_lines').toggle, 'Toggle LSP Lines')
-
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap
           map(

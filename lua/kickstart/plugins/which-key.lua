@@ -50,14 +50,16 @@ return {
       }
 
       -- LSP
+      local ll = package.loaded.lsp_lines
       wk.add {
         { '<leader>l', desc = 'Language Server', icon = '', mode = { 'n' } },
         { '<leader>ls', desc = 'Symbols', mode = { 'n' } },
+        { '<leader>ll', ll.toggle, desc = 'Toggle LSP Lines', mode = { 'n' } },
       }
 
       -- Tree
       wk.add {
-        { '<leader>t', '<cmd>Neotree reveal toggle<cr>', desc = 'Tree', icon = '󰙅', mode = { 'n' } },
+        { '<leader>t', '<cmd>Neotree reveal toggle<cr>', desc = 'Toggle Tree', icon = '󰙅', mode = { 'n' } },
       }
 
       -- Search
