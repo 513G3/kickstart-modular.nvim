@@ -39,7 +39,12 @@ return {
         -- autoSearchPaths = true,
         -- useLibraryCodeForTypes = true,
         -- diagnosticMode = 'openFilesOnly',
-        ignore = { "*" }, -- Does not work unless there is a root_marker in place
+        diagnosticSeverityOverrides = {
+          reportInvalidStringEscapeSequence = "none", -- Using Ruff
+          reportMissingImports = "none", -- Using Ruff
+          reportUndefinedVariable = "none", -- Using Ruff
+          reportUnusedExpression = "none", -- Using Ruff
+        },
       },
     },
     pyright = {
