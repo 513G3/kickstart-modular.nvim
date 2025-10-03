@@ -33,7 +33,7 @@ return {
     'pyrightconfig.json',
     '.git',
   },
-  settings = {
+  settings = { -- Ignored unless there is a root_marker in place, even an empty one
     python = {
       analysis = {
         -- autoSearchPaths = true,
