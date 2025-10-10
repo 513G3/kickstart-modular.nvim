@@ -52,6 +52,11 @@ return {
       -- disableTaggedHints = true, -- Using Ruff
     },
   },
+  capabilities = {
+    general = {
+      positionEncodings = { 'utf-16' },
+    },
+  },
   on_attach = function(client, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightOrganizeImports', function()
       local params = {

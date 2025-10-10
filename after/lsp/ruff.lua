@@ -32,4 +32,9 @@ return {
   filetypes = { 'python' },
   root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
   settings = {},
+  capabilities = {
+    general = {
+      positionEncodings = { 'utf-16' },
+    },
+  },
 }

@@ -80,9 +80,7 @@ return {
         editsNearCursor = true,
       },
     },
-    -- Using clangd with cpplint (via none-ls) causes a complaint
-    -- about encoding; have clangd use cpplint's default of utf-8
-    offsetEncoding = { 'utf-8' },
+    offsetEncoding = { 'utf-16' },
   },
   ---@param init_result ClangdInitializeResult
   on_init = function(client, init_result)
