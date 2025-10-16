@@ -150,6 +150,7 @@ return {
         'clangd',
         'clang-format',
         'cpplint',
+        'groovyls',
         'jsonlint',
         'jsonls',
         'lua_ls',
