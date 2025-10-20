@@ -126,7 +126,19 @@ return {
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Files' })
       vim.keymap.set('n', '<leader>st', builtin.builtin, { desc = 'Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Current Word' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Live Grep' })
+      vim.keymap.set('n', '<leader>sg', function()
+        if vim.bo.filetype == 'neo-tree' then
+          for _, win in ipairs(vim.api.nvim_list_wins()) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            if vim.bo[buf].filetype ~= 'neo-tree' then
+              vim.api.nvim_set_current_win(win)
+              break
+            end
+          end
+        end
+        builtin.live_grep()
+      end, { desc = 'Live Grep' })
+
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Diagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Resume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = 'Recent Files ("." for repeat)' })
