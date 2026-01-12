@@ -32,6 +32,11 @@ return {
   filetypes = { 'python' },
   root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
   settings = {},
+  init_options = {
+    settings = {
+      lint = { 'F481' }, -- Using PyRight
+    },
+  },
   capabilities = {
     general = {
       positionEncodings = { 'utf-16' },
