@@ -34,7 +34,7 @@ return {
   settings = {},
   init_options = {
     settings = {
-      lint = { 'F481' }, -- Using PyRight
+      lint = { 'F481' }, -- Using Pyright
     },
   },
   capabilities = {
