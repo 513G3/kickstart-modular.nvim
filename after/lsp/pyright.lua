@@ -36,20 +36,18 @@ return {
   settings = { -- Ignored unless there is a root_marker in place, even an empty one
     python = {
       analysis = {
-        -- autoSearchPaths = true,
-        -- useLibraryCodeForTypes = true,
-        -- diagnosticMode = 'openFilesOnly',
         diagnosticSeverityOverrides = {
           reportInvalidStringEscapeSequence = "none", -- Using Ruff
           reportMissingImports = "none", -- Using Ruff
           reportUndefinedVariable = "none", -- Using Ruff
           reportUnusedExpression = "none", -- Using Ruff
+          reportUnusedImport = "none", -- Using Ruff
+          reportUnusedVariable = "none", -- Using Ruff
         },
       },
     },
     pyright = {
-      -- disableOrganizeImports = true, -- Using Ruff
-      -- disableTaggedHints = true, -- Using Ruff
+      disableTaggedHints = true, -- Using Ruff
     },
   },
   capabilities = {
