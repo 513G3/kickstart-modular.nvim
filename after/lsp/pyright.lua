@@ -37,6 +37,7 @@ return {
     python = {
       analysis = {
         diagnosticSeverityOverrides = {
+          reportIncompatibleVariableOverride = "none",
           reportInvalidStringEscapeSequence = "none", -- Using Ruff
           reportMissingImports = "none", -- Using Ruff
           reportUndefinedVariable = "none", -- Using Ruff
