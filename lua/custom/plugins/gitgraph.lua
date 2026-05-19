@@ -4,8 +4,8 @@ return {
   opts = {
     git_cmd = 'git',
     symbols = {
-      merge_commit = 'M',
-      commit = '*',
+      merge_commit = '◎',
+      commit = '●',
     },
     format = {
       timestamp = '%H:%M:%S %d-%m-%Y',
