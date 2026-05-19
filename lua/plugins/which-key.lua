@@ -1,12 +1,10 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VeryLazy', -- Sets the loading event to 'VeryLazy'
-    config = function() -- This is the function that runs, AFTER loading
+    event = 'VeryLazy',
+    config = function()
       local wk = require 'which-key'
       wk.setup()
-
-      -- Diagnostics
       wk.add {
         { '<leader>d', desc = 'Diagnostics', mode = { 'n' } },
         {
@@ -18,8 +16,6 @@ return {
         },
         { '<leader>dq', vim.diagnostic.setloclist, desc = 'Quickfix List', mode = { 'n' } },
       }
-
-      -- Git
       local gs = package.loaded.gitsigns
       wk.add {
         { '<leader>g', desc = 'Git', mode = { 'n' } },
@@ -48,21 +44,15 @@ return {
         { '<leader>gtb', gs.toggle_current_line_blame, desc = 'Toggle line blame', mode = { 'n' } },
         { '<leader>gtd', gs.toggle_deleted, desc = 'Toggle show deleted', mode = { 'n' } },
       }
-
-      -- LSP
       local ll = package.loaded.lsp_lines
       wk.add {
         { '<leader>l', desc = 'Language Server', icon = '', mode = { 'n' } },
         { '<leader>ls', desc = 'Symbols', mode = { 'n' } },
         { '<leader>ll', ll.toggle, desc = 'Toggle LSP Lines', mode = { 'n' } },
       }
-
-      -- Tree
       wk.add {
         { '<leader>t', '<cmd>Neotree reveal toggle<cr>', desc = 'Toggle Tree', icon = '󰙅', mode = { 'n' } },
       }
-
-      -- Search
       wk.add {
         { '<leader>s', desc = 'Search', mode = { 'n' } },
       }
