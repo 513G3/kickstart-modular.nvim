@@ -2,7 +2,7 @@ return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
+      -- Automatically install LSPs and external tools to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -140,6 +140,27 @@ return {
 
       require('mason').setup()
 
+      local lsp_servers = {
+        'clangd',
+        'groovyls',
+        'jsonls',
+        'lua_ls',
+        'pyright',
+        'ruff',
+        'taplo',
+      }
+
+      -- Share nvim-cmp completion capabilities with every server enabled through
+      -- Neovim's native LSP config system.
+      vim.lsp.config('*', {
+        capabilities = capabilities,
+      })
+
+      require('mason-lspconfig').setup {
+        ensure_installed = lsp_servers,
+        automatic_enable = lsp_servers,
+      }
+
       -- You can add tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
       local ensure_installed = {}
@@ -147,37 +168,15 @@ return {
         'beautysh',
         'buf',
         'checkmake',
-        'clangd',
         'clang-format',
         'cpplint',
-        'groovyls',
         'jsonlint',
-        'jsonls',
-        'lua_ls',
         'protolint',
-        'pyright',
-        'ruff',
         'shellcheck',
         'shfmt',
         'stylua',
-        'taplo',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
-        ensure_installed = servers,
-        automatic_installation = true,
-      }
     end,
   },
 }
