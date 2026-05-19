@@ -65,7 +65,7 @@ return {
 
         pickers = {
           find_files = {
-            find_commad = {
+            find_command = {
               'rg',                -- Use ripgrep (make sure it is installed!)
               '--files-without-match',
               '\\.(pyc|o)$',       -- Ignore intermediates
