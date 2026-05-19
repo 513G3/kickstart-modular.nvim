@@ -11,6 +11,10 @@ require('lazy').setup({
 
   require 'plugins/lspconfig',
 
+  require 'plugins/conform',
+
+  require 'plugins/lint',
+
   require 'plugins/cmp',
 
   require 'plugins/tokyonight',
@@ -25,3 +29,4 @@ require('lazy').setup({
 }, {})
 
 -- vim: ts=2 sts=2 sw=2 et
+
