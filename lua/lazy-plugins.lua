@@ -3,23 +3,23 @@ require('lazy').setup({
   'tpope/vim-rhubarb',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  require 'kickstart/plugins/gitsigns',
+  require 'plugins/gitsigns',
 
-  require 'kickstart/plugins/which-key',
+  require 'plugins/which-key',
 
-  require 'kickstart/plugins/telescope',
+  require 'plugins/telescope',
 
-  require 'kickstart/plugins/lspconfig',
+  require 'plugins/lspconfig',
 
-  require 'kickstart/plugins/cmp',
+  require 'plugins/cmp',
 
-  require 'kickstart/plugins/tokyonight',
+  require 'plugins/tokyonight',
 
-  require 'kickstart/plugins/todo-comments',
+  require 'plugins/todo-comments',
 
-  require 'kickstart/plugins/treesitter',
+  require 'plugins/treesitter',
 
-  require 'kickstart/plugins/indent-blankline',
+  require 'plugins/indent-blankline',
 
   { import = 'custom/plugins' },
 }, {})
