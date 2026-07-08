@@ -141,6 +141,8 @@ return {
       require('mason').setup()
 
       local lsp_servers = {
+        'bashls',
+        'buf_ls',
         'clangd',
         'groovyls',
         'jsonls',
